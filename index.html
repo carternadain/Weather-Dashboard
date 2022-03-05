@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Dashboard</title>
     <link rel="stylesheet" href="./assets/css/style.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
 </head>
 
 <body>
@@ -16,6 +17,17 @@
   <div>
       <h2 class ="search" >Search for a city: </h2>
   </div>
+
+  <main class="flex-row justify-space-between">
+    <div class="card">
+    
+      <form id="user-form" class="card-body">
+        <label class="form-label" for="username">City</label>
+        <input name="username" id="username" type="text" autofocus="true" class="form-input" />
+        <button type="submit" class="btn">Search</button>
+      </form>
+    </div>
+    <div class="col-12 col-md-4"></div>
 
     <script src="./assets/js/homepage.js"></script>
 </body>
