@@ -1,9 +1,19 @@
-const apiKey = "ffdd7626b68a3f81a3df32c8ea82937a";
+// const  = document.querySelector("#");
+// const  = document.querySelector("#");
+// const  = document.querySelector('#');
+// const  = document.querySelector('#');
+
 
 
 
 
 // current weather function for a specefic city (temp,wind,humid,UV index)
+fetch('https://api.openweathermap.org/data/2.5/weather?q=miami&appid=ffdd7626b68a3f81a3df32c8ea82937a')
+.then(response => response.json())
+.then(data => {
+
+// .catch(err => alert("Wrong city name!"));
+})
 
 
 
@@ -12,8 +22,12 @@ const apiKey = "ffdd7626b68a3f81a3df32c8ea82937a";
 
 
 // 5 day weather function for that city searched
+fetch('https://api.openweathermap.org/data/2.5/weather?q=miami&appid=ffdd7626b68a3f81a3df32c8ea82937a')
+.then(response => response.json())
+.then(data => {
 
-
+// .catch(err => alert("Wrong city name!"));
+})
 
 
 
