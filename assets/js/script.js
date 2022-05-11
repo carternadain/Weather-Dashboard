@@ -12,7 +12,6 @@ const tempature = document.querySelector('#tempature')
 const hum = document.querySelector('#hum')
 
 
-
 // current weather function for a specefic city (temp,wind,humid,UV index)
 var singleCityWeather = function(city) {
     fetch('https://api.openweathermap.org/data/2.5/weather?q='+city+'&units=imperial&appid=ffdd7626b68a3f81a3df32c8ea82937a')
@@ -25,13 +24,6 @@ var singleCityWeather = function(city) {
      }) 
 }
         
-
-
-// .catch(err => alert("Wrong city name!"));
-
-
-
-
 
 
 
@@ -66,6 +58,5 @@ submitButton.addEventListener ('click',function(){
 
 
 // local storage area for previous searched cities
-// var saveSearch = function(){
-//     localStorage.setItem("cities", JSON.stringify(cities));
-// 
+
+
