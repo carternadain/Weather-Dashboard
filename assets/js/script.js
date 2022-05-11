@@ -5,8 +5,11 @@ const citySearch = document.querySelector('#searchCity');
 const currentWeather = document.querySelector('#currentweather')
 const temp = document.querySelector('#temp')
 const humidity = document.querySelector('#humidity')
-const windspeed = document.querySelector('#windspeed')
-
+const windSpeed = document.querySelector('#windspeed')
+const head = document.querySelector('#header')
+const wind = document.querySelector('#wind')
+const tempature = document.querySelector('#tempature')
+const hum = document.querySelector('#hum')
 
 
 
@@ -15,9 +18,9 @@ var singleCityWeather = function(city) {
     fetch('https://api.openweathermap.org/data/2.5/weather?q='+city+'&units=imperial&appid=ffdd7626b68a3f81a3df32c8ea82937a')
      .then(response => response.json())
      .then(response => {
-     currentWeather.innerHTML += response.name
-     humidity.innerHTML += ' ' + response.main.humidity
-     windspeed.innerHTML += ' ' + response.wind.speed
+     currentWeather.innerHTML += ' City Name:' + ' ' + response.name 
+     humidity.innerHTML += ' Humidity:' + ' ' + response.main.humidity
+     windSpeed.innerHTML += ' Windspeed:' + ' ' + response.wind.speed
         console.log(response) 
      }) 
 }
@@ -32,23 +35,21 @@ var singleCityWeather = function(city) {
 
 
 
-
+// data m , d ,y temp,wind,humidity
 // 5 day weather function for that city searched
-// var fiveDayWeather = function(city) {
-//  
-//     fetch('https://api.openweathermap.org/data/2.5/weather?q='+city+'&units=imperial&appid=ffdd7626b68a3f81a3df32c8ea82937a')
-//      .then(response => response.json())
-//      .then(response => {
-//         // fivedayWeather.innerHTML += response.name
-//         // fivedayWeather.innerHTML += ' ' + response.main.temp
-//         // fivedayWeather.innerHTML += ' ' + response.main.humidity
-//         // fivedayWeather.innerHTML += ' ' + response.wind.speed
-
-//         console.log(response) 
-//      }) 
-// }
-
-
+var multiDayWeather = function(city) {
+    fetch('https://api.openweathermap.org/data/2.5/weather?q='+city+'&units=imperial&appid=ffdd7626b68a3f81a3df32c8ea82937a')
+     .then(response => response.json())
+     .then(response => {
+        head.innerHTML += ' ' + 'Five Day Forecast'
+        tempature.innerHTML += ' Tempature:' + ' ' + response.main.temp
+        wind.innerHTML += ' Windspeed:' + ' ' + response.wind.speed
+        hum.innerHTML += ' Humidity:' + ' ' + response.main.humidity
+            console.log(response)
+      
+     })
+    }      
+  
 
 
 
@@ -58,10 +59,13 @@ submitButton.addEventListener ('click',function(){
     console.log(citySearch.value)
 })
 
-
+submitButton.addEventListener ('click',function(){
+    multiDayWeather (citySearch.value);
+    console.log(citySearch.value)
+})
 
 
 // local storage area for previous searched cities
-var saveSearch = function(){
-    localStorage.setItem("cities", JSON.stringify(cities));
-};
+// var saveSearch = function(){
+//     localStorage.setItem("cities", JSON.stringify(cities));
+// 
